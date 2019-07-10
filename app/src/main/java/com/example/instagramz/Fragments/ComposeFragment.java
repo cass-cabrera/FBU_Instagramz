@@ -156,32 +156,9 @@ public class ComposeFragment extends Fragment {
                 }
                 Log.d(APP_TAG, "Success!");
                 etDescription.setText("");
-                picture.setImageResource(0);
+                picture.setImageResource(R.drawable.camera_shadow_fill);
             }
         });
     }
 
-
-    private void queryPosts() {
-        ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
-        postQuery.include(Post.KEY_USER);
-        postQuery.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> objects, ParseException e) {
-                if (e != null) {
-                    Log.e(APP_TAG, "error with query");
-                    e.printStackTrace();
-                    return;
-                }
-                for(int i = 0; i < objects.size(); i++) {
-                    Post post = objects.get(i);
-                    Log.d(APP_TAG, "Post [" + i + "] = "
-                                + objects.get(i).getKeyDescription()
-                                + "\nusername = " + objects.get(i).getKeyUser().getUsername()
-                        );
-                }
-
-            }
-        });
-    }
 }
