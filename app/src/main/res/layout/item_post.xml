@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tvHandle"
@@ -26,7 +28,7 @@
         android:id="@+id/tvDescriptionPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WOW!"
         android:layout_marginBottom="16dp"
+        android:text="WOW!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 </LinearLayout>
