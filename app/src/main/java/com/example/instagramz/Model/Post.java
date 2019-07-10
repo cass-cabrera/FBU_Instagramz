@@ -1,10 +1,17 @@
 package com.example.instagramz.Model;
 
+import android.text.format.DateUtils;
+
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 
 @ParseClassName("Post")
@@ -37,6 +44,19 @@ public class Post extends ParseObject {
 
     public void setKeyUser(ParseUser user) {
         put(KEY_USER, user);
+    }
+
+    public String getRelativeTimestamp() {
+        String twitterFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy";
+        SimpleDateFormat sf = new SimpleDateFormat(twitterFormat, Locale.ENGLISH);
+        sf.setLenient(true);
+
+        String relativeDate = "";
+        Date createdAt = getCreatedAt();
+        long dateMillis = createdAt.getTime();
+        relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
+                System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
+        return relativeDate;
     }
 
     public static class Query extends ParseQuery<Post> {

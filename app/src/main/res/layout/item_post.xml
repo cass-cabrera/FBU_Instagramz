@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/tvHandle"
-        android:layout_width="match_parent"
+        android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:text="casscab"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -28,7 +28,14 @@
         android:id="@+id/tvDescriptionPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="WOW!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="16 years ago"
+        android:textColor="@android:color/darker_gray" />
 </LinearLayout>
