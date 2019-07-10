@@ -10,9 +10,9 @@ import com.parse.ParseUser;
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
-    private static final String KEY_DESCRIPTION = "description";
-    private static final String KEY_IMAGE = "image";
-    private static final String KEY_USER = "user";
+   public static final String KEY_DESCRIPTION = "description";
+   public static final String KEY_IMAGE = "image";
+   public static final String KEY_USER = "user";
 
     public String getKeyDescription() {
         return getString(KEY_DESCRIPTION);
@@ -34,7 +34,7 @@ public class Post extends ParseObject {
         return getParseUser(KEY_USER);
     }
 
-    public void setKeyDescription(ParseUser user) {
+    public void setKeyUser(ParseUser user) {
         put(KEY_USER, user);
     }
 
