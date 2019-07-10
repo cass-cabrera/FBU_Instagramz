@@ -39,7 +39,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
 //                ParseUser currentUser = ParseUser.getCurrentUser();
 
-                //intent to go back to login screen with a finish
             }
         });
     }
