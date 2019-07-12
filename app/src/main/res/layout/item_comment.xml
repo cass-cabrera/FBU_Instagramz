@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCommenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="casscab"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="wow, this is such a cool post omg. nice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/tvCommentTimestamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="16 years ago" />
+</LinearLayout>
