@@ -1,5 +1,6 @@
 package com.example.instagramz.Fragments;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
