@@ -24,6 +24,21 @@
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+    <ImageButton
+        android:id="@+id/ibCommentButt"
+        android:layout_width="32dp"
+        android:layout_height="34dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/ufi_comment" />
+
+    <TextView
+        android:id="@+id/tvlikeCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1,000,000 likes"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
     <TextView
         android:id="@+id/tvDescriptionPost"
         android:layout_width="match_parent"
@@ -35,7 +50,8 @@
         android:id="@+id/tvTimestamp"
         android:layout_width="186dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="16 years ago"
+        android:layout_marginBottom="16dp"
         android:textColor="@android:color/darker_gray" />
+
 </LinearLayout>

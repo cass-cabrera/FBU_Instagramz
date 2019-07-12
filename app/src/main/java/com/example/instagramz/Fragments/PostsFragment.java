@@ -12,12 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.instagramz.Adapter.EndlessRecyclerViewScrollListener;
 import com.example.instagramz.Adapter.PostsAdapter;
 import com.example.instagramz.Model.Post;
 import com.example.instagramz.R;
 import com.parse.FindCallback;
+import com.parse.LocationCallback;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import org.json.JSONArray;
 
@@ -27,6 +31,8 @@ import java.util.List;
 public class PostsFragment extends Fragment {
 
     private RecyclerView rvPosts;
+    private EndlessRecyclerViewScrollListener scrollListener;
+
     public final String APP_TAG = "Post Fragment";
     private PostsAdapter adapter;
     private List<Post> mPosts;
@@ -69,7 +75,19 @@ public class PostsFragment extends Fragment {
                 android.R.color.holo_red_light);
 
 
+
         queryPosts();
+
+        scrollListener = new EndlessRecyclerViewScrollListener(new LinearLayoutManager(getContext())) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                // Triggered only when new data needs to be appended to the list
+                // Add whatever code is needed to append new items to the bottom of the list
+                queryPosts();
+            }
+        };
+        // Adds the scroll listener to RecyclerView
+        rvPosts.addOnScrollListener(scrollListener);
     }
 
     private void queryPosts() {
